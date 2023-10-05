@@ -1,8 +1,8 @@
-stories-can-play
-stories-list
 tab-title
 mat-card-margin-desktop
-oppia-stories-list-container
-story-info-container
-topic-description
+stories-can-play
+stories-list
 oppia-page-card
+oppia-stories-list-container
+topic-description
+story-info-container

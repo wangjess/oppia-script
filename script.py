@@ -22,12 +22,16 @@ def get_classes(contents, filename):
     # A list of QualifiedRules
     rules = tinycss2.parse_stylesheet(contents, skip_comments=True, skip_whitespace=True)
     for rule in rules:
-        if rule.type == 'qualified-rule':
-            for i, val in enumerate(rule.prelude):
+        if rule.type == 'qualified-rule': # handles class selectors
+            for val in rule.prelude:
                 if val.type == 'ident':
                     if val.value not in exclusions:
                         classes.append(val.value)
-
+        elif rule.type == 'at-rule': # handles @ rules
+            for val in rule.content:
+                if val.type == 'ident':
+                    if val.value not in exclusions:
+                        classes.append(val.value)
     # Get unique set
     new_classes = set(list(set(classes)))
     with open(filename, 'a') as log:
@@ -64,6 +68,8 @@ def main():
         # Create corresponding output files
         filename = Path(f).name
         out_f = filename[0:filename.find('.')] + '_classes.txt'
+        if out_f == "about-page_classes.txt":
+            print("OK")
         final_out = "output/" + out_f
 
         with open(f, 'r', encoding='UTF-8') as file:

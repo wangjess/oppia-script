@@ -1,10 +1,10 @@
+oppia-subtopic-viewer-next-subtopic-summary
+oppia-topic-title
 oppia-subtopic-summary-tile-container
+oppia-subtopic-viewer-container-card
+oppia-subtopic-title
 oppia-subtopic-viewer-container
 oppia-page-contents-viewer
-oppia-topic-title
-oppia-subtopic-title
-next-subtopic-section
-oppia-subtopic-viewer-next-subtopic-summary
 oppia-subtopic-next-subtopic-label
 oppia-subtopic-summary-tile
-oppia-subtopic-viewer-container-card
+next-subtopic-section

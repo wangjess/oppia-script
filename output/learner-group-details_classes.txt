@@ -1,5 +1,5 @@
 oppia-learner-group-details
 required-field
 form-group
-textarea
 oppia-long-text
+textarea

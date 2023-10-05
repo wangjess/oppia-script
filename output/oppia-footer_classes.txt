@@ -1,2 +1,2 @@
-oppia-footer-container
 oppia-footer-version-info
+oppia-footer-container

@@ -1,7 +1,8 @@
-multiple-choice-option
-selected
-multiple-choice-content-container
 multiple-choice-inner-radio-button
-multiple-choice-outer-radio-button
-multiple-choice-option-container
+multiple-choice-option
+multiple-choice-content-container
 multiple-choice-radio-button-container
+selected
+hover
+multiple-choice-option-container
+multiple-choice-outer-radio-button

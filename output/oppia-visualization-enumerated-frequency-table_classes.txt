@@ -1,8 +1,8 @@
-td
-first-child
+tr
 oppia-visualization-enumerated-frequency-table
+table
+th
 answer-rank
 item
-table
-tr
-th
+td
+first-child

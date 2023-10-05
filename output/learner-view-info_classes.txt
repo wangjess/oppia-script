@@ -1,7 +1,7 @@
-oppia-navbar-breadcrumb
-lesson-info-section
-oppia-topic-title
-oppia-learner-view-info
 oppia-navbar-title-container
 oppia-learner-navbar-container
+oppia-topic-title
 oppia-exploration-h1
+oppia-navbar-breadcrumb
+lesson-info-section
+oppia-learner-view-info
