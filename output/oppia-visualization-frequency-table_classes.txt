@@ -1,0 +1,5 @@
+oppia-visualization-frequency-table
+td
+first-child
+table
+th

@@ -1,0 +1,17 @@
+learners-dropdown-toggle
+img
+gray-message
+back-to-all-learners-progress-button
+learner-specific-progress-view-selectors
+search-bar-label
+search-bar-input
+learner-info
+divider
+oppia-learner-group-learners-progress
+learner-progress-summary-title
+learner-progress-summary
+view-details-button
+warning
+learners-dropdown-menu
+learner-progress-summary-info
+learner-progress-summary-header

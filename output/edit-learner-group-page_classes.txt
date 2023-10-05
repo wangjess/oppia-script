@@ -1,0 +1,15 @@
+oppia-edit-learner-group
+oppia-dashboard-view
+hr
+group-info-title
+oppia-dashboard-view-content-container
+learners-count
+group-info-description
+oppia-dashboard-view-tabs-item
+tab-icon
+path
+oppia-dashboard-view-tabs
+oppia-dashboard-view-tabs-container
+active
+group-info
+svg

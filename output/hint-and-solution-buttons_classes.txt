@@ -1,0 +1,17 @@
+material-icons
+footer-hints-label
+solution-container
+close
+oppia-lightbulb-yellow
+hover
+oppia-learner-hint-solution-button
+before
+viewed
+md-button
+hint-box
+hint-box-add-ons
+after
+uib-position-measure
+md-default-theme
+oppia-hint-and-solution-buttons
+list-inline

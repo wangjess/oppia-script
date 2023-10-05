@@ -1,0 +1,2 @@
+oppia-footer-container
+oppia-footer-version-info

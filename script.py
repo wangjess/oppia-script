@@ -1,44 +1,43 @@
 """Module that will extract the class names from valid *.css files."""
 
-import re
 import os
+import shutil
 from pathlib import Path
 import tinycss2
+log_file = 'output/log.txt'
 
-log_file = 'log.txt'
-
-
-# Uses tinycss2
-def get_css_classes(contents, filename):
+def get_classes(contents, filename):
     """Gets classes and writes to filename.
 
     Args:
         contents: the contents of the *.css file.
         filename: the file to output class names.
     Returns:
-        None.
+        Number of classes found.
 
     """
-    make_err = filename
+    exclusions = ['a', 'li', 'ul', 'p', 'focus']
+    classes = []
 
-    # A list of QualifiedRules, AtRules and Comments
-    # TODO: Fix
-    rules = tinycss2.parse_stylesheet(contents)
-
+    # A list of QualifiedRules
+    rules = tinycss2.parse_stylesheet(contents, skip_comments=True, skip_whitespace=True)
     for rule in rules:
-        if rule.type != 'qualified-rule':
-            continue
-    # 'prelude' means the tokens preceding '{'
-    # See https://doc.courtbouillon.org/tinycss2/stable/api_reference.html#tinycss2.ast.QualifiedRule
-    prelude_tokens = rule.prelude
-    for index, token in enumerate(prelude_tokens[1:], 1):
-        previous_token = prelude_tokens[index - 1]
-        if token.type == 'ident' and previous_token == '.':
-            yield token.value
+        if rule.type == 'qualified-rule':
+            for i, val in enumerate(rule.prelude):
+                if val.type == 'ident':
+                    if val.value not in exclusions:
+                        classes.append(val.value)
 
+    # Get unique set
+    new_classes = set(list(set(classes)))
+    with open(filename, 'a') as log:
+        for val in new_classes:
+            print(val, file=log)
+
+    return len(new_classes)
 
 def main():
-    print('Hello World!')
+    print('Start!')
 
     # Obtain all valid *.css files:
     # Ignore files in third_party/, node_modules/, dist/, scripts/ and .direnv/
@@ -50,24 +49,30 @@ def main():
         for line in pipe:
             css_files.append(line.strip('\n'))
 
-    # Delete & re-write to log.txt
-    if os.path.exists(log_file):
-        os.system('rm ' + log_file)
+    # Delete & re-create output/ folder
+    if os.path.isdir("output"):
+        shutil.rmtree("output", ignore_errors=True)
+        os.mkdir("output")
+    else:
+        os.mkdir("output")
+
     with open(log_file, 'a', encoding='UTF-8') as f:
         print('# total valid css_files:', len(css_files), file=f)
 
     # Obtain classes from each *.css file
     for f in css_files:
-        # Create corresponding output filename
+        # Create corresponding output files
         filename = Path(f).name
-        output_filename = filename[0:filename.find('.')] + '_classes.txt'
+        out_f = filename[0:filename.find('.')] + '_classes.txt'
+        final_out = "output/" + out_f
 
         with open(f, 'r', encoding='UTF-8') as file:
             file_contents = file.read()
-            get_css_classes(file_contents, output_filename)
+            num_classes = get_classes(file_contents, final_out)
             with open(log_file, 'a') as log:
                 print('==================================', file=log)
                 print(f, file=log)
+                print(num_classes, file=log)
 
     # Grep for each class in all the .html files
 

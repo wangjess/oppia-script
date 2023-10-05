@@ -1,0 +1,8 @@
+td
+first-child
+oppia-visualization-enumerated-frequency-table
+answer-rank
+item
+table
+tr
+th

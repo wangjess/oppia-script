@@ -1,0 +1,16 @@
+exploration-title
+progress-bar
+oppia-progress-reminder-modal
+incomplete-checkpoint-node
+resume-button
+reverse-checkpoint-order
+completed-progress-bar
+completed-checkpoint-node
+progress-reminder-text
+multiple-checkpoints-bar
+restart-button
+single-checkpoint-bar
+completion-fraction
+progress-bar-container
+in-progress-checkpoint-node
+continue-text

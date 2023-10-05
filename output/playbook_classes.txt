@@ -1,0 +1,12 @@
+h3
+oppia-publication-instructions-container
+oppia-about-buttons-container
+oppia-static-content
+participation
+playbook
+oppia-teach-tab-content
+oppia-static-extra-content
+oppia-teach-button
+oppia-about-extra-container
+oppia-about-extra-info
+h2

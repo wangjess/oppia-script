@@ -1,0 +1,12 @@
+oppia-visualization-sorted-tile
+img
+selected
+i
+frequency
+oppia-visualization-sorted-tile-answer
+oppia-visualization-sorted-tiles
+oppia-visualization-sorted-tile-frequency
+oppia-visualization-sorted-tile-content
+arrow-up
+oppia-visualization-sorted-tile-tooltip
+more

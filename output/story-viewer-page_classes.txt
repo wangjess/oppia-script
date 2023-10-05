@@ -1,0 +1,16 @@
+login-buttons
+login-text
+oppia-login-button
+hover
+oppia-story-viewer-container
+skip-container
+span
+oppia-story-viewer-card-description-box
+oppia-sign-up-button
+md-raised
+oppia-story-viewer-page
+skip-btn
+story-viewer-login-container
+oppia-login-or-signup-text
+mat-raised-button
+oppia-story-description-text

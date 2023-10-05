@@ -1,0 +1,11 @@
+oppia-play-exploration-button
+mobile-exploration-card-image
+oppia-exploration-summary-tile
+thumbnail-image
+oppia-exploration-dashboard-card
+oppia-learner-confirm-button
+oppia-return-to-parent-button
+views-text
+mobile-exploration-card-image-container
+oppia-arrow-icon
+mobile-activity-summary-card

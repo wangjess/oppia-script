@@ -1,0 +1,10 @@
+navbar-mobile-options
+oppia-base-content-pre-logo-container
+oppia-cookie-banner-container
+show-mobile-navbar-icon
+navbar-mobile-container
+oppia-cookie-banner-explanation
+deep
+oppia-cookie-banner
+oppia-content-container
+oppia-cookie-banner-accept-button
