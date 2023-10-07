@@ -1,4 +1,4 @@
-click-hexbin-image-overlay
-click-hexbin-wrapper
 click-hexbin-chart-tooltip
 click-hexbin-mesh
+click-hexbin-wrapper
+click-hexbin-image-overlay

@@ -1,3 +1,3 @@
-section
 oppia-state-stats-modal-body
+section
 oppia-state-stats-warning

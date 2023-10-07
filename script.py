@@ -4,7 +4,9 @@ import os
 import shutil
 from pathlib import Path
 import tinycss2
+
 log_file = 'output/log.txt'
+
 
 def get_classes(contents, filename):
     """Gets classes and writes to filename.
@@ -16,18 +18,19 @@ def get_classes(contents, filename):
         Number of classes found.
 
     """
-    exclusions = ['a', 'li', 'ul', 'p', 'focus']
+    exclusions = ['a', 'li', 'ul', 'p', 'focus', 'h5']
     classes = []
 
     # A list of QualifiedRules
-    rules = tinycss2.parse_stylesheet(contents, skip_comments=True, skip_whitespace=True)
+    rules = tinycss2.parse_stylesheet(
+        contents, skip_comments=True, skip_whitespace=True)
     for rule in rules:
-        if rule.type == 'qualified-rule': # handles class selectors
+        if rule.type == 'qualified-rule':  # handles typical classname selectors
             for val in rule.prelude:
                 if val.type == 'ident':
                     if val.value not in exclusions:
                         classes.append(val.value)
-        elif rule.type == 'at-rule': # handles @ rules
+        elif rule.type == 'at-rule':  # handles @ rules, gets classnames defined within
             for val in rule.content:
                 if val.type == 'ident':
                     if val.value not in exclusions:
@@ -39,6 +42,7 @@ def get_classes(contents, filename):
             print(val, file=log)
 
     return len(new_classes)
+
 
 def main():
     print('Start!')
@@ -79,6 +83,24 @@ def main():
                 print('==================================', file=log)
                 print(f, file=log)
                 print(num_classes, file=log)
+
+    # Parse output/ and report findings in to_delete/ (contains unused classes)
+    # Delete & re-create to_delete/ folder
+    if os.path.isdir("to_delete"):
+        shutil.rmtree("to_delete", ignore_errors=True)
+        os.mkdir("to_delete")
+    else:
+        os.mkdir("to_delete")
+
+    # Search for class usage in HTML files
+    directory_to_loop = "output/"
+    with os.scandir(directory_to_loop) as it:
+        for entry in it:
+            if entry.is_file():
+                print(entry.path)
+                with open(entry.path, 'r') as file:
+                    for line in file:
+                        print(line.strip('\n'))
 
     # Grep for each class in all the .html files
 

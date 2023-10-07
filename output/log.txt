@@ -7,7 +7,7 @@
 11
 ==================================
 /Users/kaka/OpenSource/oppia/core/templates/css/oppia-material.css
-365
+364
 ==================================
 /Users/kaka/OpenSource/oppia/core/templates/css/oppia.css
 543
