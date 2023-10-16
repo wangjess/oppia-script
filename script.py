@@ -4,9 +4,14 @@ import os
 import shutil
 from pathlib import Path
 import tinycss2
+import subprocess
+import sys
 
 log_file = 'output/log.txt'
 
+
+def install_bs4():
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "bs4"])
 
 def get_classes(contents, filename):
     """Gets classes and writes to filename.
@@ -46,6 +51,12 @@ def get_classes(contents, filename):
 
 def main():
     print('Start!')
+
+    try:
+        from bs4 import BeautifulSoup
+    except:
+        install_bs4()
+        from bs4 import BeautifulSoup
 
     # Obtain all valid *.css files:
     # Ignore files in third_party/, node_modules/, dist/, scripts/ and .direnv/
@@ -92,17 +103,33 @@ def main():
     else:
         os.mkdir("to_delete")
 
+    # Get all HTML files inside oppia/
+    all_classes = []
+    with os.popen("find '/Users/kaka/OpenSource/oppia' -name '*.html'") as pipe:
+        for line in pipe:
+            html_file = line.strip('\n')
+            # print(html_file)
+            content = open(html_file, 'r').read()
+            soup = BeautifulSoup(content, 'html.parser')
+            for element in soup.find_all(class_=True):
+                all_classes.extend(element["class"])
+
+    # Only get unique list of classes
+    all_classes = list(set(all_classes))
+    if "conversation-skin-future-tutor-card" in all_classes:
+        print("FOUND")
+
     # Search for class usage in HTML files
     directory_to_loop = "output/"
     with os.scandir(directory_to_loop) as it:
         for entry in it:
             if entry.is_file():
-                print(entry.path)
                 with open(entry.path, 'r') as file:
                     for line in file:
-                        print(line.strip('\n'))
-
-    # Grep for each class in all the .html files
+                        if line not in all_classes:
+                            fp = open('to_delete/'+entry.name, 'w')
+                            fp.write(line)
+                            fp.close()
 
 
 if __name__ == '__main__':
