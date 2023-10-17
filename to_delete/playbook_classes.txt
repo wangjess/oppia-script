@@ -1,1 +1,2 @@
-oppia-about-extra-info
+oppia-teach-tab-content
+

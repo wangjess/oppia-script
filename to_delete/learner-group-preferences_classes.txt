@@ -1,1 +1,2 @@
-preferences-tab-sections
+invite-successful-modal
+

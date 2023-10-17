@@ -1,1 +1,2 @@
-oppia-subscription-card-summary-text-container
+focus-visible
+

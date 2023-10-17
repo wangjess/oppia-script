@@ -129,11 +129,14 @@ def main():
             if entry.is_file():
                 with open(entry.path, 'r') as file:
                     for line in file:
-                        if line not in all_classes:
+                        if file.name == 'output/tutor-card_classes.txt':
+                            print("STOP HERE")
+                        if line.strip('\n') not in all_classes:
+                            if line.strip('\n') == 'conversation-skin-future-tutor-card':
+                                print("FOUND GUY")
                             findings = 'to_delete/' + entry.name
                             fp = open(findings, 'w')
                             fp.write(line)
-                            fp.write('\n')
                             fp.close()
 
 

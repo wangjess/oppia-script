@@ -1,1 +1,2 @@
-oppia-state-stats-modal-body
+oppia-state-stats-warning
+

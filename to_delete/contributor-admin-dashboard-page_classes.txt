@@ -1,1 +1,2 @@
-oppia-community-stats-header
+oppia-header-stats-container
+

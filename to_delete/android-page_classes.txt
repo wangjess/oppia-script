@@ -1,1 +1,2 @@
-oppia-android-speech-bubble-text
+oppia-android-logo
+

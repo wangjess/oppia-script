@@ -1,1 +1,2 @@
-attribution-modal
+oppia-open-new-tab-icon
+

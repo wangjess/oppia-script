@@ -1,1 +1,2 @@
-chapter-progress-container
+mat-expansion-panel-content
+

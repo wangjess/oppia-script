@@ -1,1 +1,2 @@
-oppia-profile-portfolio-container
+oppia-navigation-mouse-pointer
+

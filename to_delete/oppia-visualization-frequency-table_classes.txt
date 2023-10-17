@@ -1,1 +1,2 @@
-th
+oppia-visualization-frequency-table
+

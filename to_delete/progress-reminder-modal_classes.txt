@@ -1,1 +1,2 @@
-exploration-title
+completed-checkpoint-node
+

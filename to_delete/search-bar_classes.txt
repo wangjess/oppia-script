@@ -1,1 +1,2 @@
-oppia-search-bar-category-selection-symbol
+classroom-page-input-group
+

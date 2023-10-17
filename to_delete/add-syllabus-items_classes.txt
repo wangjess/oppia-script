@@ -1,1 +1,2 @@
-syllabus-item-added-cta-button
+learner-group-syllabus-filters-title
+

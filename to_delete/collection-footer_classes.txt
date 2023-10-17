@@ -1,1 +1,2 @@
-oppia-share-collection-footer
+oppia-collection-footer-container
+

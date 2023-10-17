@@ -1,1 +1,2 @@
-oppia-classroom-page-guidance-tile
+classroom-page
+

@@ -1,1 +1,2 @@
-oppia-story-player-tiles-container
+story-mascot
+

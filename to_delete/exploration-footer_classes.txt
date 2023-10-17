@@ -1,1 +1,2 @@
-oppia-close-popover-button
+hovered-text
+

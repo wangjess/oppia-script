@@ -1,1 +1,2 @@
-oppia-story-viewer-card-description-box
+oppia-story-viewer-page
+
