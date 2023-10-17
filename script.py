@@ -108,16 +108,19 @@ def main():
     with os.popen("find '/Users/kaka/OpenSource/oppia' -name '*.html'") as pipe:
         for line in pipe:
             html_file = line.strip('\n')
-            # print(html_file)
-            content = open(html_file, 'r').read()
-            soup = BeautifulSoup(content, 'html.parser')
-            for element in soup.find_all(class_=True):
-                all_classes.extend(element["class"])
+            try:
+                with open(html_file, 'r') as file:
+                    html_as_string = file.read()
+                    soup = BeautifulSoup(html_as_string, 'html.parser')
+                    for element in soup.find_all(class_=True):
+                        all_classes.extend(element["class"])
+            except AttributeError as err:
+                print(err, html_file)
 
     # Only get unique list of classes
-    all_classes = list(set(all_classes))
-    if "conversation-skin-future-tutor-card" in all_classes:
-        print("FOUND")
+    all_classes = sorted(list(set(all_classes)))
+    if "conversation-skin-future-tutor-card" not in all_classes:
+        print("NOT FOUND")
 
     # Search for class usage in HTML files
     directory_to_loop = "output/"
@@ -127,8 +130,10 @@ def main():
                 with open(entry.path, 'r') as file:
                     for line in file:
                         if line not in all_classes:
-                            fp = open('to_delete/'+entry.name, 'w')
+                            findings = 'to_delete/' + entry.name
+                            fp = open(findings, 'w')
                             fp.write(line)
+                            fp.write('\n')
                             fp.close()
 
 
