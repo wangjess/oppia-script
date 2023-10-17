@@ -1,6 +1,6 @@
 oppia-collection-footer-sharing-links
-oppia-collection-footer
-oppia-share-collection-footer
-float-right
-collection-footer-img
 oppia-collection-footer-container
+float-right
+oppia-share-collection-footer
+oppia-collection-footer
+collection-footer-img

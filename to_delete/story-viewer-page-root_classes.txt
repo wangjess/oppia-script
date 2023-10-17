@@ -1,2 +1,1 @@
-story-mascot
-
+oppia-activity-summary-tile-mobile-background-mask

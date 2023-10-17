@@ -1,2 +1,1 @@
-oppia-open-new-tab-icon
-
+attribution-guide

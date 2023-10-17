@@ -1,8 +1,8 @@
 ng-enter
-ng-leave-active
-conversation-skin-close-help-card-button
-conversation-skin-help-card
 help-card-standard
-conversation-skin-oppia-avatar
-conversation-skin-supplemental-card
+conversation-skin-close-help-card-button
 oppia-supplemental-card
+ng-leave-active
+conversation-skin-supplemental-card
+conversation-skin-help-card
+conversation-skin-oppia-avatar

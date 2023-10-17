@@ -1,2 +1,1 @@
-oppia-sidebar-menu-closed
-
+oppia-side-navigation-bar

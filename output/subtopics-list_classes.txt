@@ -1,7 +1,7 @@
-tab-title
-subtopics-container
 oppia-page-card
 oppia-long-text
+subtopic-subheading
+subtopics-container
+tab-title
 subtopics-list
 subtopic-summary-tile
-subtopic-subheading

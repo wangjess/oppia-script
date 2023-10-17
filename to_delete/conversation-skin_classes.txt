@@ -1,2 +1,1 @@
-oppia-conversation-skin
-
+conversation-skin-tutor-card-alone

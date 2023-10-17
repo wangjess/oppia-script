@@ -1,2 +1,1 @@
-oppia-android-logo
-
+oppia-android-bold-text

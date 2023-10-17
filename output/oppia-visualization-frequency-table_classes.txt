@@ -1,5 +1,5 @@
-th
-td
-oppia-visualization-frequency-table
-first-child
 table
+th
+oppia-visualization-frequency-table
+td
+first-child

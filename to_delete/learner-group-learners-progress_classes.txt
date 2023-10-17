@@ -1,2 +1,1 @@
-img
-
+learner-progress-summary-title

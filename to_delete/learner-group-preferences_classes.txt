@@ -1,2 +1,1 @@
-invite-successful-modal
-
+delete-learner-group-modal

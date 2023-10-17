@@ -1,11 +1,11 @@
 views-text
-oppia-arrow-icon
-mobile-exploration-card-image-container
 oppia-exploration-dashboard-card
 thumbnail-image
+mobile-activity-summary-card
+oppia-arrow-icon
+oppia-exploration-summary-tile
+mobile-exploration-card-image-container
+mobile-exploration-card-image
 oppia-return-to-parent-button
 oppia-learner-confirm-button
-mobile-exploration-card-image
-oppia-exploration-summary-tile
-mobile-activity-summary-card
 oppia-play-exploration-button

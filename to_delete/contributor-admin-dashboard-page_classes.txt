@@ -1,2 +1,1 @@
-oppia-header-stats-container
-
+stats-header

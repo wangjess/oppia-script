@@ -7,7 +7,7 @@ import tinycss2
 import subprocess
 import sys
 
-log_file = 'output/log.txt'
+log_file = 'log.txt'
 
 
 def install_bs4():
@@ -75,6 +75,7 @@ def main():
     else:
         os.mkdir("output")
 
+    # Print data to log.txt
     with open(log_file, 'a', encoding='UTF-8') as f:
         print('# total valid css_files:', len(css_files), file=f)
 
@@ -103,7 +104,7 @@ def main():
     else:
         os.mkdir("to_delete")
 
-    # Get all HTML files inside oppia/
+    # Get all HTML files inside oppia/ project root folder
     all_classes = []
     with os.popen("find '/Users/kaka/OpenSource/oppia' -name '*.html'") as pipe:
         for line in pipe:
@@ -129,15 +130,18 @@ def main():
             if entry.is_file():
                 with open(entry.path, 'r') as file:
                     for line in file:
-                        if file.name == 'output/tutor-card_classes.txt':
-                            print("STOP HERE")
+                        # if file.name == 'output/tutor-card_classes.txt':
+                        #     print("STOP HERE")
                         if line.strip('\n') not in all_classes:
-                            if line.strip('\n') == 'conversation-skin-future-tutor-card':
-                                print("FOUND GUY")
+                            # if line.strip('\n') == 'conversation-skin-future-tutor-card':
+                            #     print("FOUND GUY")
                             findings = 'to_delete/' + entry.name
                             fp = open(findings, 'w')
                             fp.write(line)
                             fp.close()
+
+    # Call helper script to manually grep
+
 
 
 if __name__ == '__main__':

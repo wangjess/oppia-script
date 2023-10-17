@@ -1,2 +1,1 @@
-after
-
+oppia-navbar-dropdown-heart-icon
