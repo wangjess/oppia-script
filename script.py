@@ -6,6 +6,7 @@ from pathlib import Path
 import tinycss2
 import subprocess
 import sys
+import pyquery as pq
 
 log_file = 'log.txt'
 
@@ -111,8 +112,8 @@ def main():
             html_file = line.strip('\n')
             try:
                 with open(html_file, 'r') as file:
-                    html_as_string = file.read()
-                    soup = BeautifulSoup(html_as_string, 'html.parser')
+                    soup = BeautifulSoup(file, 'html.parser')
+                    # Use BeautifulSoup to parse for all classes
                     for element in soup.find_all(class_=True):
                         all_classes.extend(element["class"])
             except AttributeError as err:
@@ -121,7 +122,7 @@ def main():
     # Only get unique list of classes
     all_classes = sorted(list(set(all_classes)))
     if "conversation-skin-future-tutor-card" not in all_classes:
-        print("NOT FOUND")
+        print("VERIFIED that this isn't used in any HTMLs :)")
 
     # Search for class usage in HTML files
     directory_to_loop = "output/"
@@ -130,18 +131,37 @@ def main():
             if entry.is_file():
                 with open(entry.path, 'r') as file:
                     for line in file:
-                        # if file.name == 'output/tutor-card_classes.txt':
-                        #     print("STOP HERE")
                         if line.strip('\n') not in all_classes:
-                            # if line.strip('\n') == 'conversation-skin-future-tutor-card':
-                            #     print("FOUND GUY")
                             findings = 'to_delete/' + entry.name
                             fp = open(findings, 'w')
                             fp.write(line)
                             fp.close()
 
-    # Call helper script to manually grep
+    # -------------------- Double Checking --------------------
+    # Use PyQuery (jquery-like lib for Python) to parse XMLs
+    # Sanity Check: Use another HTML parser to dbl-check
+    if os.path.isdir("to_delete2"):
+        shutil.rmtree("to_delete2", ignore_errors=True)
+        os.mkdir("to_delete2")
+    else:
+        os.mkdir("to_delete2")
 
+    # Get all HTML files inside oppia/ project root folder
+    all_classes2 = []
+    with os.popen("find '/Users/kaka/OpenSource/oppia' -name '*.html'") as pipe:
+        for line in pipe:
+            html_file = line.strip('\n')
+            try:
+                with open(html_file, 'r') as file:
+                    d = pq(url=file)
+            except AttributeError as err:
+                print(err, html_file)
+
+    # -------------------- Double Checking End --------------------
+
+    # Call helper script to manually grep
+    # print("Executing Verifier...")
+    # exec(open("grep_verifier.py").read())
 
 
 if __name__ == '__main__':
